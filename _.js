@@ -70,7 +70,39 @@ const _ = {
       }
       return undefined
     },
+
+    drop(arr, n){
+      if (typeof n === 'undefined'){
+        n = 1
+      }
   
+      var droppedArray  = arr.slice(n)
+      return droppedArray
+    },
+
+    dropWhile(array, predicate) {
+      const cb = (element, index) => {
+        return !predicate(element, index, array)
+      }
+      let dropNumber = array.findIndex(cb)
+      let droppedArray = this.drop(array,dropNumber);
+      return droppedArray
+    },
+
+    chunk(array, size) {
+      if (typeof size === 'undefined'){
+        size = 1
+      }
+      let arrayChunks = []
+      for (i =0 ; i < array.length; i + size){
+        let arrayChunk = array.slice(i, i+size)
+        arrayChunk.push(arrayChunk)
+      }
+      return arrayChunks
+    },
+    
+
+   
   
   };
 
