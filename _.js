@@ -43,7 +43,13 @@ const _ = {
   
       return paddedString
     },
-  
+
+    //modified has method
+    // doesn't take 'path' as a prameter, takes a key instrad anc check to see if it has a vlaue set
+    has (object, key){
+      let hasValue = object[key] != undefined
+      return hasValue
+    },
   };
 
 
@@ -51,5 +57,4 @@ const _ = {
 
 
 
- // Do not write or modify code below this line.
 module.exports = _;
