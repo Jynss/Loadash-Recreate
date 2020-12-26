@@ -20,7 +20,14 @@ const _ = {
         var isInRange =  start <= number && number < end
         return isInRange
       },
-    
+
+
+    words(string) {
+    let words = string.split(' ')
+    return words
+    },
+    //modified words, only separates based on blank spaces.
+    //only one parameter
   };
 
 
